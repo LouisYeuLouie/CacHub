@@ -1,3 +1,4 @@
+print("Dit me may tao open soucre la de tham khao skid bo may botnet ok?")
 local DiscordLib = {}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -4496,8 +4497,60 @@ end)
     end
  end)
 
+local raid = serv:Channel("Raid")
+raid:Toggle("Kill Aura",false,function(boolen)
+    getgenv().kill1phatdie = boolen
+end)
+raid:Toggle("Bip 400tr",false,function(boolen)
+    sangdaokhac = boolen
+end)
+
 local island = serv:Channel("Teleport")
 island:Label("co cai cc")
+
+while wait() do
+	if getgenv().kill1phatdie then
+		for i,v in pairs(game.Workspace.Enemies:GetDescendants()) do
+                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                        pcall(function()
+                            repeat wait(.1)
+                                sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                                v.Humanoid.Health = 0
+                                v.HumanoidRootPart.CanCollide = false
+                                v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                v.HumanoidRootPart.Transparency = 0.8
+                            until not Killaura or not _G.AutoRaid or not RaidSuperhuman or not v.Parent or v.Humanoid.Health <= 0
+                        end)
+                     end
+                 end
+	end
+end
+
+spawn(function()
+	pcall(function()
+		while game:GetService("RunService").Heartbeat:wait() do
+			if sangdaokhac then
+				if game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Timer.Visible == true and game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 5") or game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 4") or game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 3") or game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 2") or game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 1") then
+					if game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 5") then
+						totarget(game:GetService("Workspace")["_WorldOrigin"].Locations["Island 5"].CFrame*CFrame.new(0,80,0))
+					elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 4") then
+						totarget(game:GetService("Workspace")["_WorldOrigin"].Locations["Island 4"].CFrame*CFrame.new(0,80,0))
+					elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 3") then
+						totarget(game:GetService("Workspace")["_WorldOrigin"].Locations["Island 3"].CFrame*CFrame.new(0,80,0))
+					elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 2") then
+						totarget(game:GetService("Workspace")["_WorldOrigin"].Locations["Island 2"].CFrame*CFrame.new(0,80,0))
+					elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 1") then
+						totarget(game:GetService("Workspace")["_WorldOrigin"].Locations["Island 1"].CFrame*CFrame.new(0,80,0))
+					end
+				elseif world2 then
+					totarget(CFrame.new(-6438.73535, 250.645355, -4501.50684))
+				elseif world3 then
+					totarget(CFrame.new(-5057.146484375, 314.54132080078, -2934.7995605469))
+				end
+			end
+		end
+	end)
+end)
 
 local SuperFastAttack = false
 
