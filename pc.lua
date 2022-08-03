@@ -844,6 +844,66 @@ lon:AddSlider({
 		getgenv().Point = Value
 	end    
 })
+
+local Raid = Window:MakeTab({
+	Name = "Something",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Raid:AddToggle({
+	Name = "Chết hết quái",
+	Default = false,
+	Callback = function(boolen)
+		getgenv().lon = boolen
+	end
+})
+Raid:AddToggle({
+	Name = "Sang đảo :v",
+	Default = false,
+	Callback = function(boolen)
+		sangdaokhac = boolen
+	end
+})
+
+while wait() do
+	if getgenv().kill1phatdie then
+		for i,v in pairs(game.Workspace.Enemies:GetDescendants()) do
+            if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                pcall(function()
+                    repeat wait(.1)
+                        sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                        v.Humanoid.Health = 0
+                        v.HumanoidRootPart.CanCollide = false
+                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                        v.HumanoidRootPart.Transparency = 0.8
+                    until not getgenv().kill1phatdie or v.Humanoid.Health <= 0
+                end)
+            end
+        end
+	end
+end
+
+spawn(function()
+	pcall(function()
+		while game:GetService("RunService").Heartbeat:wait() do
+			if sangdaokhac then
+				if game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Timer.Visible == true and game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 5") or game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 4") or game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 3") or game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 2") or game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 1") then
+					if game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 5") then
+						totarget(game:GetService("Workspace")["_WorldOrigin"].Locations["Island 5"].CFrame*CFrame.new(0,80,0))
+					elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 4") then
+						totarget(game:GetService("Workspace")["_WorldOrigin"].Locations["Island 4"].CFrame*CFrame.new(0,80,0))
+					elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 3") then
+						totarget(game:GetService("Workspace")["_WorldOrigin"].Locations["Island 3"].CFrame*CFrame.new(0,80,0))
+					elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 2") then
+						totarget(game:GetService("Workspace")["_WorldOrigin"].Locations["Island 2"].CFrame*CFrame.new(0,80,0))
+					elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 1") then
+						totarget(game:GetService("Workspace")["_WorldOrigin"].Locations["Island 1"].CFrame*CFrame.new(0,80,0))
+					end
+				end
+			end
+		end
+	end)
+end)
  
 spawn(function()
    while wait() do
