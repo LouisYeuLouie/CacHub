@@ -3932,6 +3932,27 @@ function EquipWeapon(tool)
     end
 end
 -- [Hub] --
+local Nuttatui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+
+Nuttatui.Name = "Nuttatui"
+Nuttatui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Nuttatui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ImageButton.Parent = Nuttatui
+ImageButton.BackgroundColor3 = Color3.fromRGB(155, 125, 255)
+ImageButton.Position = UDim2.new(0.0639097765, 0, 0.11138311, 0)
+ImageButton.Size = UDim2.new(0, 99, 0, 97)
+ImageButton.Image = "http://www.roblox.com/asset/?id=2042663632"
+
+UICorner.CornerRadius = UDim.new(1, 1)
+UICorner.Parent = ImageButton
+
+ImageButton.MouseButton1Click:Connect(function()
+	game.CoreGui.Discord.Enabled = not game.CoreGui.Discord.Enabled
+end)
+
 local win = DiscordLib:Window("Mobile")
 
 local serv = win:Server("Preview", "")
