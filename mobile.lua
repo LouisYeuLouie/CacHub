@@ -4511,19 +4511,19 @@ island:Label("co cai cc")
 while wait() do
 	if getgenv().kill1phatdie then
 		for i,v in pairs(game.Workspace.Enemies:GetDescendants()) do
-                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                        pcall(function()
-                            repeat wait(.1)
-                                sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
-                                v.Humanoid.Health = 0
-                                v.HumanoidRootPart.CanCollide = false
-                                v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                                v.HumanoidRootPart.Transparency = 0.8
-                            until not Killaura or not _G.AutoRaid or not RaidSuperhuman or not v.Parent or v.Humanoid.Health <= 0
-                        end)
-                     end
-                 end
-	end
+            if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                pcall(function()
+                    repeat wait(.1)
+                        sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                        v.Humanoid.Health = 0
+                        v.HumanoidRootPart.CanCollide = false
+                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                        v.HumanoidRootPart.Transparency = 0.8
+                    until not getgenv().kill1phatdie or v.Humanoid.Health <= 0
+                end)
+            end
+        end
+    end
 end
 
 spawn(function()
@@ -4542,10 +4542,6 @@ spawn(function()
 					elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 1") then
 						totarget(game:GetService("Workspace")["_WorldOrigin"].Locations["Island 1"].CFrame*CFrame.new(0,80,0))
 					end
-				elseif world2 then
-					totarget(CFrame.new(-6438.73535, 250.645355, -4501.50684))
-				elseif world3 then
-					totarget(CFrame.new(-5057.146484375, 314.54132080078, -2934.7995605469))
 				end
 			end
 		end
