@@ -12,7 +12,7 @@ BfNoiti.BackgroundTransparency = 1.000
 BfNoiti.Position = UDim2.new(0.367321104, 0, 0.023391813, 0)
 BfNoiti.Size = UDim2.new(0, 418, 0, 34)
 BfNoiti.Font = Enum.Font.Gotham
-BfNoiti.Text = "<Welcome To Prime Hub>"
+BfNoiti.Text = "<Welcome To LouisVutton Hub>"
 BfNoiti.TextColor3 = Color3.fromRGB(255, 0, 0)
 BfNoiti.TextScaled = true
 BfNoiti.TextSize = 14.000
@@ -3466,7 +3466,7 @@ function EquipWeapon(tool)
     end
 end
 -- [Hub] --
-local win = Flux:Window("Blox Fruits", "Ditme NPT",Color3.fromRGB(252, 3, 144), Enum.KeyCode.RightControl)
+local win = Flux:Window("LouisVutton", "Hub",Color3.fromRGB(252, 3, 144), Enum.KeyCode.RightControl)
 local Home = win:Tab("AutoFarm","http://www.roblox.com/asset/?id=7040391851")
 Home:Label("Main")
 Home:Toggle("Start",false,function(value)
