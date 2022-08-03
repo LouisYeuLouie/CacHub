@@ -3956,7 +3956,7 @@ end)
 local win = DiscordLib:Window("Mobile")
 
 local serv = win:Server("Preview", "")
-local Home = win:Channel("AutoFarm","http://www.roblox.com/asset/?id=7040391851")
+local Home = serv:Channel("AutoFarm")
 Home:Label("Main")
 Home:Toggle("Start",false,function(value)
     getgenv().AutoFarmToggle = value
@@ -4433,7 +4433,7 @@ end)
 
 loadstring(game:HttpGet"https://raw.githubusercontent.com/PrimeHubx0/Tool/main/BringMobByNegus.lua")()
 
-local Stat = win:Channel("Auto Stat","http://www.roblox.com/asset/?id=7040410130")
+local Stat = serv:Channel("Auto Stat")
 Stat:Toggle("Auto Defense",false,function(value)
     getgenv().Health = value
 end)
@@ -4496,7 +4496,7 @@ end)
     end
  end)
 
-local island = win:Channel("Teleport","http://www.roblox.com/asset/?id=7040391851")
+local island = serv:Channel("Teleport")
 island:Label("co cai cc")
 
 local SuperFastAttack = false
