@@ -1,4 +1,8 @@
+HwidList = {}
+UserList = {}
 if game.PlaceId  == 7449423635 then
+   table.insert(HwidList, game:GetService("RbxAnalyticsService"):GetClientId())
+   table.insert(UserList, game.Players.LocalPlayer.Name)
 else
    return game.Players.LocalPlayer:Kick("Third Sea Only")
 end
