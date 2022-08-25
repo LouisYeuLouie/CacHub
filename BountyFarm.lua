@@ -1,5 +1,5 @@
-if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId  == 7449423635 then
-
+if game.PlaceId  == 7449423635 then
+    print("Third Sea OK")
 else
     return
 end
