@@ -1,9 +1,3 @@
-if game.PlaceId  == 7449423635 then
-    print("Third Sea OK")
-else
-    return
-end
-
 repeat wait() until game:IsLoaded()
 
 --Boronide™ Premium Obfuscation, v0.6.1
