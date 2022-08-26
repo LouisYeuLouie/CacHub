@@ -1,4 +1,3 @@
--- blox fruit --
 repeat wait() until game:IsLoaded()
 
 --Boronide™ Premium Obfuscation, v0.6.1
