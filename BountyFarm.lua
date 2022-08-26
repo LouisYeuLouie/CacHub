@@ -1,8 +1,4 @@
-if game.PlaceId == "7449423635" then
-else
-   return print("Third Sea Only")
-end
-
+-- blox fruit --
 repeat wait() until game:IsLoaded()
 
 --Boronide™ Premium Obfuscation, v0.6.1
